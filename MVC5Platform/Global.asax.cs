@@ -15,6 +15,17 @@ namespace MVC5Platform
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
+        //Recording the life-cycle events with regular c# events
+
+        //public MvcApplication()
+        //{
+        //    BeginRequest += (src, args) => RecordEvent("BeginRequest");
+        //    AuthenticateRequest += (src, args) => RecordEvent("AuthentucateRequest");
+        //    PostAuthenticateRequest += (src, args) => RecordEvent("PostAuthenticateRequest");
+        //}
+
+        //Recording the life-cycle events with methods
+
         protected void Application_BeginRequest()
         {
             RecordEvent("BeginRequest");
