@@ -7,9 +7,10 @@ namespace MVC5Platform.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(HttpContext.Application["events"]);
         }
 
+        
         [HttpPost]
         public ActionResult Index(Color color)
         {
@@ -23,7 +24,7 @@ namespace MVC5Platform.Controllers
                 Votes.RecordVote(color);
             }
             ViewBag.SelectedColor = Session["color"] = color;
-            return View();
+            return View(HttpContext.Application["events"]);
         }
     }
 }
