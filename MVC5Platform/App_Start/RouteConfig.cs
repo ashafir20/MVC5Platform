@@ -14,7 +14,15 @@ namespace MVC5Platform
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.Add(new Route("handler/{*path}", new CustomRouteHandler { HandlerType = typeof(DayOfWeekHandler) }));
+            //route to handlers by web.config or here by adding a route
+            //routes.Add(new Route("handler/{*path}", new CustomRouteHandler { HandlerType = typeof(DayOfWeekHandler) }));
+
+//stop the URL routing feature from intercepting requests that I want to go to my custom handler
+//The RouteCollection.IgnoreRoute method tells the routing system to ignore a URL pattern. In the listing, I used
+//the IgnoreRoute method to exclude any URL whose first segment is /handler. When a URL pattern is excluded, the
+//routing system won’t try to match routes for it or generate an error when there is no route available, allowing the ASP.
+//NET platform to locate a handler from the Web.config file.
+            routes.IgnoreRoute("handler/{*path}");
 
             routes.MapRoute(
                 name: "Default",
