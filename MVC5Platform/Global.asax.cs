@@ -13,15 +13,35 @@ namespace MVC5Platform
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            CreateTimeStamp();
         }
 
         //Recording the life-cycle events with regular c# events
 
         public MvcApplication()
         {
-            BeginRequest += RecordEvent;
-            AuthenticateRequest += RecordEvent;
-            PostAuthenticateRequest += RecordEvent;
+            //BeginRequest += RecordEvent;
+            //AuthenticateRequest += RecordEvent;
+            //PostAuthenticateRequest += RecordEvent;
+            PostAcquireRequestState += (src, args) => CreateTimeStamp();
+        }
+
+//The new method, called CreateTimeStamp, aims to reduce code duplication by dealing with application-level
+//and request-level timestamps with the same set of statements. This code will throw an exception as soon as the
+//application is started because it attempts to read the Session property for an instance of the global application class
+//that has been created to deal with the Application_Start method being called.
+        private void CreateTimeStamp()
+        {
+            string stamp = Context.Timestamp.ToLongTimeString();
+            //if (Session != null) //throws exception when called from application_start method
+            if (Context.Session != null) //bypassing the security check and no exception thrown
+            {
+                Session["request_timestamp"] = stamp;
+            }
+            else
+            {
+                Application["app_timestamp"] = stamp;
+            }
         }
 
         //Recording the life-cycle events with methods

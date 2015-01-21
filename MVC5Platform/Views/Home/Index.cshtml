@@ -50,8 +50,27 @@
     <table class="table table-condensed table-striped">
         @foreach (string eventName in Model)
         {
-            <tr><td>@eventName</td></tr>
+            <tr>
+                <td>@eventName</td>
+            </tr>
         }
+    </table>
+</div>
+<div class="panel panel-primary">
+    <h5 class="panel-heading">Request Properties</h5>
+    <table class="table table-condensed table-striped">
+        <tr>
+            <th>Property</th><th>Value</th>
+        </tr>
+        <tr>
+            <td>HttpMethod</td><td>@Request.HttpMethod</td>
+        </tr>
+        <tr>
+            <td>IsLocal</td><td>@Request.IsLocal</td>
+        </tr>
+        <tr>
+            <td>RawURL</td><td>@Request.RawUrl</td>
+        </tr>
     </table>
 </div>
 </body>
