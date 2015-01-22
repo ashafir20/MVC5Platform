@@ -107,6 +107,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DayOfWeekHandler.cs" />
+    <Compile Include="Infrastructure\SiteLengthHandler.cs" />
     <Compile Include="Infrastructure\TimerModule.cs" />
     <Compile Include="Infrastructure\TotalTimeModule.cs" />
     <Compile Include="Models\Votes.cs" />
