@@ -3,7 +3,7 @@ using System.Web;
 
 namespace MVC5Platform.Infrastructure
 {
-    public class DayOfWeekHandler : IHttpHandler
+    public class DayOfWeekHandler : IHttpHandler, IRequiresDate
     {
         public void ProcessRequest(HttpContext context)
         {

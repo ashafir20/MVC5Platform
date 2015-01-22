@@ -9,7 +9,7 @@ namespace MVC5Platform.Infrastructure
         {
             app.PostMapRequestHandler += (src, args) =>
             {
-                if (app.Context.Handler is DayOfWeekHandler)
+                if (app.Context.Handler is IRequiresDate)
                 {
                     app.Context.Items["DayModule_Time"] = DateTime.Now;
                 }
