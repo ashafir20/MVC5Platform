@@ -7,16 +7,24 @@ namespace MVC5Platform.Infrastructure
     {
         public void ProcessRequest(HttpContext context)
         {
-            string day = DateTime.Now.DayOfWeek.ToString();
-            if (context.Request.CurrentExecutionFilePathExtension == ".json")
+            if (context.Items.Contains("DayModule_Time") && (context.Items["DayModule_Time"] is DateTime))
             {
-                context.Response.ContentType = "application/json";
-                context.Response.Write(string.Format("{{\"day\": \"{0}\"}}", day));
+                string day = ((DateTime) context.Items["DayModule_Time"]).DayOfWeek.ToString();
+                if (context.Request.CurrentExecutionFilePathExtension == ".json")
+                {
+                    context.Response.ContentType = "application/json";
+                    context.Response.Write(string.Format("{{\"day\": \"{0}\"}}", day));
+                }
+                else
+                {
+                    context.Response.ContentType = "text/html";
+                    context.Response.Write(string.Format("<span>It is: {0}</span>", day));
+                }
             }
             else
             {
                 context.Response.ContentType = "text/html";
-                context.Response.Write(string.Format("<span>It is: {0}</span>", day));
+                context.Response.Write("No Module Data Available");
             }
         }
         public bool IsReusable
