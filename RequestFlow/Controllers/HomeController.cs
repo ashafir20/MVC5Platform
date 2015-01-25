@@ -9,5 +9,10 @@ namespace RequestFlow.Controllers
         {
             return View();
         }
+
+        public ActionResult Authenticate()
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
