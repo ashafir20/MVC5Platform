@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Platform", "MVC5Platfor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModules", "CommonModules\CommonModules.csproj", "{2881667E-773D-4708-A3F9-679DEDFA421B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestFlow", "RequestFlow\RequestFlow.csproj", "{48D93C13-EAC4-4237-9D22-B17A53DDA210}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2881667E-773D-4708-A3F9-679DEDFA421B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2881667E-773D-4708-A3F9-679DEDFA421B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2881667E-773D-4708-A3F9-679DEDFA421B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
