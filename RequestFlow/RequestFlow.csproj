@@ -106,6 +106,7 @@
     </Compile>
     <Compile Include="Infrastructure\DebugModule.cs" />
     <Compile Include="Infrastructure\DeflectModule.cs" />
+    <Compile Include="Infrastructure\EventListModule.cs" />
     <Compile Include="Infrastructure\HandlerSelectionModule.cs" />
     <Compile Include="Infrastructure\InfoHandler.cs" />
     <Compile Include="Infrastructure\RedirectModule.cs" />
