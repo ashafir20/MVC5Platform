@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModules", "CommonModu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestFlow", "RequestFlow\RequestFlow.csproj", "{48D93C13-EAC4-4237-9D22-B17A53DDA210}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile", "Mobile\Mobile.csproj", "{3FE82F13-35BB-4702-B231-04904224A886}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D93C13-EAC4-4237-9D22-B17A53DDA210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE82F13-35BB-4702-B231-04904224A886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE82F13-35BB-4702-B231-04904224A886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE82F13-35BB-4702-B231-04904224A886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE82F13-35BB-4702-B231-04904224A886}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
