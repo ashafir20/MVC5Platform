@@ -1,5 +1,49 @@
-﻿@{
+﻿@using Mobile.Models
+@model Programmer[]
+
+@{
     Layout = null;
 }
-
-<h2>title</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mobile Devices</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert alert-success">
+        This is the /Views/Home/Index.cshtml view
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Programmers</div>
+        <table class="table table-striped">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Title</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Language</th>
+            </tr>
+            @foreach (Programmer prog in Model)
+            {
+                <tr>
+                    <td>@prog.FirstName</td>
+                    <td>@prog.LastName</td>
+                    <td>@prog.Title</td>
+                    <td>@prog.City</td>
+                    <td>@prog.Country</td>
+                    <td>@prog.Language</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
