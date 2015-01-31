@@ -7,39 +7,23 @@ namespace Mobile.Infrastructure
 {
     public class LogModule : IHttpModule
     {
-        private static int sharedCounter = 0;
-        private int requestCounter;
-        private static object lockObject = new object();
-        private Exception requestException = null;
+        private const string traceCategory = "LogModule";
 
         public void Init(HttpApplication app)
         {
-            app.BeginRequest += (src, args) => { requestCounter = ++sharedCounter; };
-            app.Error += (src, args) => { requestException = HttpContext.Current.Error; };
-            app.LogRequest += (src, args) => WriteLogMessage(HttpContext.Current);
-        }
-
-        private void WriteLogMessage(HttpContext ctx)
-        {
-            StringWriter sr = new StringWriter();
-            sr.WriteLine("--------------");
-            sr.WriteLine("Request: {0} for {1}", requestCounter, ctx.Request.RawUrl);
-            if (ctx.Handler != null)
+            app.BeginRequest += (src, args) => { HttpContext.Current.Trace.Write(traceCategory, "BeginRequest"); };
+            app.EndRequest += (src, args) => { HttpContext.Current.Trace.Write(traceCategory, "EndRequest"); };
+            app.PostMapRequestHandler += (src, args) =>
             {
-                sr.WriteLine("Handler: {0}", ctx.Handler.GetType());
-            }
-            sr.WriteLine("Status Code: {0}, Message: {1}", ctx.Response.StatusCode,
-                ctx.Response.StatusDescription);
-            sr.WriteLine("Elapsed Time: {0} ms",
-                DateTime.Now.Subtract(ctx.Timestamp).Milliseconds);
-            if (requestException != null)
+                HttpContext.Current.Trace.Write(traceCategory,
+                    string.Format("Handler: {0}",
+                        HttpContext.Current.Handler));
+            };
+            app.Error += (src, args) =>
             {
-                sr.WriteLine("Error: {0}", requestException.GetType());
-            }
-            lock (lockObject)
-            {
-                Debug.Write(sr.ToString());
-            }
+                HttpContext.Current.Trace.Warn(traceCategory, string.Format("Error: {0}",
+                    HttpContext.Current.Error.GetType().Name));
+            };
         }
 
         public void Dispose()

@@ -15,7 +15,16 @@ namespace Mobile.Controllers
 
         public ActionResult Index()
         {
-            return View(_progs);
+            HttpContext.Trace.Write("HomeController", "Index Method Started");
+            HttpContext.Trace.Write("HomeController", string.Format("There are {0} programmers", _progs.Length));
+            ActionResult result = View(_progs);
+            HttpContext.Trace.Write("HomeController", "Index Method Completed");
+            return result;
+        }
+
+        public ActionResult Browser()
+        {
+            return View();
         }
     }
 }

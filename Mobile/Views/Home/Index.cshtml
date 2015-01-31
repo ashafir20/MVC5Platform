@@ -34,6 +34,7 @@
             </tr>
             @foreach (Programmer prog in Model)
             {
+                Context.Trace.Write("Programmers View", string.Format("Processing {0} {1}", prog.FirstName, prog.LastName));
                 <tr>
                     <td>@prog.FirstName</td>
                     <td>@prog.LastName</td>
