@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile", "Mobile\Mobile.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigFiles", "ConfigFiles\ConfigFiles.csproj", "{AF34831E-1E3B-4082-A58E-390B653D3D88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateData", "StateData\StateData.csproj", "{2F815E81-4F99-4B13-8A51-80A21C6F003F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AF34831E-1E3B-4082-A58E-390B653D3D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF34831E-1E3B-4082-A58E-390B653D3D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF34831E-1E3B-4082-A58E-390B653D3D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F815E81-4F99-4B13-8A51-80A21C6F003F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F815E81-4F99-4B13-8A51-80A21C6F003F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F815E81-4F99-4B13-8A51-80A21C6F003F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F815E81-4F99-4B13-8A51-80A21C6F003F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
